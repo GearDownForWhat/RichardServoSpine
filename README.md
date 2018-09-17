@@ -11,11 +11,15 @@ Make sure you have Arduino serial prompt set to New Line
  - Commands that apply to all joints, you just exclude the “J”          						G0 X50 Y50
 - Rotate commands, or, cascade commands can be written for all joints, like this 		        G0 R1080
 - or else they can specify just one single joint like this                           						G0 J1 R1080
-- You can request that I reads the next line of commands before executing the current line (only with SD)  G0 R360 N1
- - Using the N1 Commands is fun when running rotate commands, for example, you can command the bottom joint and the top joint to cascade in opposite directions simultaneously with this section of code
+- You can request that it reads the next line of commands before executing the current line (only with SD)  G0 R360 N1
+ - Using the N1 Command is fun when running rotate commands, for example, you can command the bottom joint and the top joint to cascade in opposite directions simultaneously with this section of code
+ 
 G0 J0 X50 N1
+
 G0 R1080 N1
+
 G0 J7 X-50 N1
+
 G0 R-1080
 
  - Rotate (cascade) commands default to a speed of 200 if you dont specify a speed (0-255) To specify, use  G0 R360 S255
